@@ -1,22 +1,3 @@
-#
-# spec file for package re2c
-#
-# Copyright (c) 2011 SUSE LINUX Products GmbH, Nuernberg, Germany.
-#
-# All modifications and additions to the file contributed by third parties
-# remain the property of their copyright owners, unless otherwise agreed
-# upon. The license for this file, and modifications and additions to the
-# file, is the same license as for the pristine package itself (unless the
-# license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An "Open Source License" is a
-# license that conforms to the Open Source Definition (Version 1.9)
-# published by the Open Source Initiative.
-
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
-
-
-
 Name:           re2c
 Version:        0.13.5
 Release:        37
@@ -26,7 +7,6 @@ Url:            http://re2c.org/
 Group:          Development/Libraries/C and C++
 Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  gcc-c++
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 re2c is a tool for writing fast and flexible lexers. Unlike other such
@@ -60,8 +40,5 @@ make test
 %defattr(-,root,root,-)
 %{_bindir}/re2c
 %{_mandir}/man1/re2c.1*
-%doc doc/*.ps doc/sample.bib
-%doc README CHANGELOG
-%doc lessons/ examples/
 
 %changelog
