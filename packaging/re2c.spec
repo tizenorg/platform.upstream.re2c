@@ -6,6 +6,7 @@ Summary:        Tool for generating C-based recognizers from regular expressions
 Url:            http://re2c.org/
 Group:          Development/Libraries/C and C++
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	re2c.manifest
 BuildRequires:  gcc-c++
 
 %description
@@ -17,6 +18,7 @@ terms of size and speed.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 find -type d -name .svn -print0 | xargs -r0 rm -rf
 find CHANGELOG lessons examples -type f -print0 \
     | xargs -r0 chmod -v a-x
@@ -37,6 +39,7 @@ make test
 %make_install
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_bindir}/re2c
 %{_mandir}/man1/re2c.1*
